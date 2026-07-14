@@ -21,6 +21,10 @@ class Settings(BaseSettings):
     allowed_origins: List[str] = Field(default_factory=lambda: ["http://localhost:3000"], alias="ALLOWED_ORIGINS")
     secret_key: str = Field(default="change-me", alias="SECRET_KEY")
     redis_url: str = Field(default="redis://localhost:6379/0", alias="REDIS_URL")
+    database_url: str = Field(
+        default="postgresql+psycopg://localhost:5432/salesgenius",
+        alias="DATABASE_URL",
+    )
 
     @field_validator("allowed_origins", mode="before")
     @classmethod

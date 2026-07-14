@@ -1,6 +1,6 @@
 # backend
 
-Phase 2 backend foundation for SalesGenius AI.
+Phase 2/3 backend foundation for SalesGenius AI.
 
 ## Run locally
 
@@ -14,3 +14,10 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 - `GET /api/v1/health/live`
 - `GET /api/v1/health/ready`
 - `GET /api/v1/meta`
+
+## Database migrations (Alembic)
+
+```bash
+cd backend
+alembic upgrade head
+```
